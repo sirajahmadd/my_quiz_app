@@ -1,0 +1,242 @@
+body {
+    background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background: #fff;
+    max-width: 600px;
+    min-width: 400px;
+    margin: 40px auto;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(60, 60, 60, 0.15);
+    padding: 40px 32px 32px 32px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1, h2 {
+    color: #f76b1c;
+    margin-bottom: 16px;
+}
+
+.difficulty-buttons button,
+.topic-buttons button,
+.result-buttons button,
+.next-btn {
+    background: #ff6600;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 28px;
+    margin: 8px 8px 0 8px;
+    font-size: 1.1em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+    box-shadow: 0 2px 8px rgba(247, 107, 28, 0.08);
+}
+
+.difficulty-buttons button:hover,
+.topic-buttons button:hover,
+.result-buttons button:hover,
+.next-btn:hover {
+    background: #ff944d;
+    transform: translateY(-2px) scale(1.04);
+}
+
+.difficulty-buttons,
+.topic-buttons,
+.result-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.quiz-container {
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+.quiz-form {
+    margin-bottom: 18px;
+}
+
+.question-text {
+    font-size: 1.35em;
+    font-weight: 700;
+    margin-bottom: 22px;
+    color: #222;
+}
+
+.options-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 18px;
+}
+
+.option-item {
+    margin-bottom: 14px;
+    font-size: 1.18em;
+}
+
+.option-item input[type="radio"] {
+    accent-color: #f76b1c;
+    margin-right: 8px;
+    transform: scale(1.2);
+}
+
+.scoreboard {
+    background: #fda08522;
+    border-radius: 8px;
+    padding: 10px 0;
+    margin-top: 10px;
+    color: #f76b1c;
+    font-weight: 500;
+    font-size: 1.05em;
+}
+
+/* Top-right floating .auth-nav */
+.auth-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(60,60,60,0.10);
+    padding: 12px 28px;
+    position: absolute;
+    top: 24px;
+    right: 36px;
+    max-width: 600px;
+    gap: 18px;
+    font-size: 1em;
+    z-index: 100;
+}
+.auth-nav .username {
+    font-size: 1.08em;
+    font-weight: 600;
+    color: #222;
+    margin-right: 18px;
+}
+.auth-nav a, .auth-nav button, .auth-nav .my-score-btn {
+    border: 2px solid #f76b1c;
+    background: #fff;
+    color: #f76b1c;
+    border-radius: 8px;
+    padding: 6px 22px;
+    font-size: 1em;
+    font-weight: 600;
+    margin-left: 0;
+    margin-right: 0;
+    cursor: pointer;
+    transition: background 0.18s, color 0.18s;
+    outline: none;
+}
+.auth-nav a:hover, .auth-nav button:hover, .auth-nav .my-score-btn:hover {
+    background: #f76b1c;
+    color: #fff;
+}
+@media (max-width: 800px) {
+    .auth-nav {
+        position: static;
+        margin: 0 auto 18px auto;
+        flex-direction: column;
+        padding: 8px 8px;
+        gap: 10px;
+        font-size: 0.98em;
+        max-width: 98vw;
+    }
+    .auth-nav .username {
+        margin-right: 0;
+        font-size: 1em;
+    }
+    .auth-nav a, .auth-nav button, .auth-nav .my-score-btn {
+        padding: 6px 12px;
+        font-size: 0.98em;
+    }
+}
+.error-message {
+    background: #ffe0e0;
+    color: #c0392b;
+    border-radius: 6px;
+    padding: 8px 0;
+    margin-bottom: 12px;
+}
+.success-message {
+    background: #e0ffe6;
+    color: #27ae60;
+    border-radius: 6px;
+    padding: 8px 0;
+    margin-bottom: 12px;
+}
+
+.login-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+}
+
+.login-form input[type="text"],
+.login-form input[type="email"],
+.login-form input[type="password"] {
+    width: 90%;
+    padding: 16px 12px;
+    font-size: 1.15em;
+    border: 1px solid #fda085;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    background: #f9f9f9;
+    transition: border 0.2s;
+}
+
+.login-form input[type="text"]:focus,
+.login-form input[type="email"]:focus,
+.login-form input[type="password"]:focus {
+    border: 1.5px solid #f76b1c;
+    outline: none;
+}
+
+.next-btn {
+    width: 90%;
+    padding: 16px 0;
+    font-size: 1.15em;
+    border-radius: 8px;
+    margin-top: 8px;
+    background: #ff6600;
+    color: #fff;
+    border: none;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.auth-links {
+    margin-top: 18px;
+    font-size: 1.08em;
+}
+
+@media (max-width: 700px) {
+    .container {
+        max-width: 98vw;
+        min-width: unset;
+        padding: 18px 4vw 18px 4vw;
+    }
+    .question-text {
+        font-size: 1.1em;
+    }
+    .option-item {
+        font-size: 1em;
+    }
+} 
